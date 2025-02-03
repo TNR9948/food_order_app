@@ -5,7 +5,6 @@ import Cart from './components/Cart/Cart';
 import CartProvider from './store/CartProvider';
 
 
-//this function is used to controll the everything
 function App() {
   const[cartIsShown,setCartIsShown]=useState(false);
 
