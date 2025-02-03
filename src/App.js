@@ -8,11 +8,8 @@ import CartProvider from './store/CartProvider';
 function App() {
   const[cartIsShown,setCartIsShown]=useState(false);
   const [cartIsShown, setCartIsShown] = useState(false);
-  
-  useEffect(() => {
-    console.log("//Hi ramu, how are you")
 
-  }, []);
+
   const showCartHandler = () => {
     setCartIsShown(true);
   }
