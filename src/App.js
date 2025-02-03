@@ -7,9 +7,7 @@ import CartProvider from './store/CartProvider';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
-  useEffect(()=>{
-    console.log("Use effect is added")
-  },[])
+
 
   const showCartHandler = () => {
     setCartIsShown(true);
