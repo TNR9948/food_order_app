@@ -12,9 +12,7 @@ const Cart = (props) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [didSubmit, setDidSubmit] = useState(false);
     const cartctx = useContext(CartContext);
-    useEffect(() => {
-        console.log("Cart in logsa")
-    }, [])
+ 
 
     const totalAmount = `$${cartctx.totalAmount.toFixed(2)}`;
 
