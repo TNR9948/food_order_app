@@ -7,9 +7,6 @@ import CartProvider from './store/CartProvider';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
-  useEffect(() => {
-    console.log("Re-assign the useeffect");
-  }, [])
 
   const showCartHandler = () => {
     setCartIsShown(true);
