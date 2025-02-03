@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useContext } from 'react';
 import classes from './Cart.module.css';
 import Modal from '../UI/Modal';
@@ -12,6 +12,9 @@ const Cart = (props) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [didSubmit, setDidSubmit] = useState(false);
     const cartctx = useContext(CartContext);
+    useEffect(() => {
+        console.log("Cart in logsa")
+    }, [])
 
     const totalAmount = `$${cartctx.totalAmount.toFixed(2)}`;
 
@@ -55,12 +58,12 @@ const Cart = (props) => {
     );
 
     const modalActions = (
-    <div className={classes.actions}>
-        <button className={classes['button--alt']}
-            onClick={props.onClose}>Close</button>
-        {hasItems && <button className={classes.button}
-            onClick={orderHandler}>Order</button>}
-    </div>
+        <div className={classes.actions}>
+            <button className={classes['button--alt']}
+                onClick={props.onClose}>Close</button>
+            {hasItems && <button className={classes.button}
+                onClick={orderHandler}>Order</button>}
+        </div>
     );
 
     const cartModalContent = (<React.Fragment>
@@ -75,16 +78,16 @@ const Cart = (props) => {
     </React.Fragment>
     );
 
-    const isSubmittingModalContent=<p>Sending order data...</p>;
+    const isSubmittingModalContent = <p>Sending order data...</p>;
 
-    const didSubmittingModalContent=(<React.Fragment>
+    const didSubmittingModalContent = (<React.Fragment>
         <p>Sucessfully sent the order</p>
 
         <div className={classes.actions}>
-        <button className={classes.button}
-            onClick={props.onClose}>Close</button>
-       
-    </div>
+            <button className={classes.button}
+                onClick={props.onClose}>Close</button>
+
+        </div>
 
     </React.Fragment>
     )
@@ -93,7 +96,7 @@ const Cart = (props) => {
         <Modal onClose={props.onClose}>
             {!isSubmitting && !didSubmit && cartModalContent}
             {isSubmitting && isSubmittingModalContent}
-            {!isSubmitting &&   didSubmit && didSubmittingModalContent}
+            {!isSubmitting && didSubmit && didSubmittingModalContent}
 
         </Modal>
     )
