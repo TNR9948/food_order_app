@@ -18,3 +18,4 @@ EXPOSE 80
 
 # Start Apache server in the foreground
 CMD ["apachectl", "-D", "FOREGROUND"]
+
